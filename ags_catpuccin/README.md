@@ -6,10 +6,11 @@
 - starship [Starship prompt](https://github.com/starship/starship)
 - tmux [Tmux](https://github.com/tmux/tmux)
 - zsh [Z shell](https://www.zsh.org/)
+- zoxide [Zoxide](https://github.com/ajeetdsouza/zoxide)
 
 ### Fast dependencies download for arch linux
 
 ```
-$ pacman -Syu foot hyprland starship tmux zsh
+$ pacman -Syu foot hyprland starship tmux zsh zoxide
 > paru -S ags
 ```
