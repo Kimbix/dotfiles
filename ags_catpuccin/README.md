@@ -16,5 +16,5 @@ If you're a wild user that somehow found this config, please beware, this config
 
 ```
 $ pacman -Syu foot hyprland starship tmux zsh zoxide
-> paru -S aylurs-gtk-shell rofi-lbonn-wayland bun-bin
+> paru -S aylurs-gtk-shell rofi-lbonn-wayland bun-bin hyprpaper
 ```
