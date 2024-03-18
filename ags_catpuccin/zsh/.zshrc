@@ -9,6 +9,15 @@ zls() { z "$@" && ls --color=auto .; }
 zla() { z "$@" && ls -la --color=auto .; }
 zlslink() { z "$@" && ls -la --color=auto . | grep '../' }
 
+# For control + arrow
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
+
+# For home, end, delete
+bindkey "^[[H" beginning-of-line
+bindkey "^[[F" end-of-line
+bindkey "^[[3~" delete-char
+
 # manface
 alias vim=nvim
 
