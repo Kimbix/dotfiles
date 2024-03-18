@@ -1,3 +1,7 @@
+## WARNING!!
+
+If you're a wild user that somehow found this config, please beware, this config is HIGHLY WIP, proceed with caution (if i remove this warning one day i will be the happiest dev on earth)
+
 ## Dependencies
 
 - ags [Aylur's Gtk Shell](https://github.com/Aylur/ags)
