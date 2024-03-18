@@ -5,7 +5,8 @@ export const recording_eventbox = Widget.EventBox({
 	on_scroll_up: () => audio.microphone.volume += 0.01,
 	on_scroll_down: () => audio.microphone.volume -= 0.01,
 	child: Widget.Button({
-		on_clicked: () => audio.microphone.is_muted = !audio.microphone.is_muted,
+		on_primary_click: () => audio.microphone.is_muted = !audio.microphone.is_muted,
+		on_middle_click: () => Utils.exec("hyprctl dispatch exec pavucontrol"),
 		child: Widget.Box({
 			children: [
 				Widget.Icon().hook(audio.microphone, self => {

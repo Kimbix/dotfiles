@@ -6,6 +6,7 @@ export const playback_eventbox = Widget.EventBox({
 	on_scroll_down: () => audio.speaker.volume -= 0.01,
 	child: Widget.Button({
 		on_clicked: () => audio.speaker.is_muted = !audio.speaker.is_muted,
+		on_middle_click: () => Utils.exec("hyprctl dispatch exec pavucontrol"),
 		child: Widget.Box({
 			children: [
 				Widget.Icon().hook(audio.speaker, self => {

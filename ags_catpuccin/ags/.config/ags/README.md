@@ -16,7 +16,7 @@
 
 ### Minor details
 
-- [ ] Open pavucontrol when clicking audio buttons
+- [x] Open pavucontrol when clicking audio buttons
 - [ ] Open calendar when clicking date and time
 - [ ] Open btop / htop / top when clicking cpu and ram usage
 - [ ] Fix that annoying undefined keyboard layout thing at startup
