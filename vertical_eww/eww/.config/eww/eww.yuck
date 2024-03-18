@@ -1,0 +1,23 @@
+; General
+(include "./modules/variables.yuck")
+(include "./modules/bar.yuck")
+(include "./modules/highlight_button.yuck")
+
+(include "./modules/sidebar/buttons.yuck")
+(include "./modules/sidebar/hyprland-workspaces.yuck")
+
+(include "./modules/volume_slider.yuck")
+(include "./modules/power_menu.yuck")
+
+; Modules
+(include "./modules/date_time.yuck")
+
+
+(defwindow sidebar
+  :monitor 0
+  :geometry (geometry :x "0px" :y "0px" :width "40px" :height "100%" :anchor "center left")
+  :stacking "fg"
+  :exclusive "true"
+  :focusable "false"
+  (bar)
+)

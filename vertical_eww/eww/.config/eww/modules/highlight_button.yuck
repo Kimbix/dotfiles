@@ -1,0 +1,13 @@
+(defwidget highlight_button [fontsize size ?margin ?padding ?onclick ?onrightclick ?onscroll ?content ?tooltip]
+
+  (box :class "highlight-button-container" :css "box { margin: ${margin ?: '0px'}; } "
+       :halign "center" :valign "center"
+    (eventbox :onclick onclick
+              :onrightclick onrightclick
+              :onscroll onscroll
+              :tooltip tooltip
+              :class "highlight-button" 
+      (label :text content :css "label { padding: ${padding ?: '0px'}; font-size: ${fontsize}; min-width: ${size}; min-height: ${size}; }" )
+    )
+  )
+)

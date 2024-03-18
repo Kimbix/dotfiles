@@ -1,0 +1,2 @@
+## Dependencies
+* pactl and pamixer

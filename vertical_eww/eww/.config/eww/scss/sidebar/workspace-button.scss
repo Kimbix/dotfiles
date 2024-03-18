@@ -1,0 +1,36 @@
+.workspace-button {
+	background: $accent;
+	min-width: $barButtonSize;
+	padding: 10px 0px 10px 0px;
+	border-radius: $barButtonSize;
+}
+
+.workspace-button-inactive {
+	background: $surface;
+
+	font-size: 0px;
+	min-height: $barButtonSize - 10px;
+	min-width: $barButtonSize - 10px;
+	border-radius: $barButtonSize;
+	margin: 2.5px 0px 2.5px 0px;
+}
+
+.workspace-button-active {
+	background: $surface;
+
+	font-size: 0px;
+	min-height: $barButtonSize - 10px;
+	min-width: $barButtonSize - 10px;
+	border-radius: $barButtonSize;
+	margin: 2.5px 0px 2.5px 0px;
+}
+
+.workspace-button-focused {
+	background: $surface;
+
+	font-size: 0px;
+	min-height: $barButtonSize + 10px;
+	min-width: $barButtonSize - 10px;
+	border-radius: $barButtonSize;
+	margin: 2.5px 0px 2.5px 0px;
+}

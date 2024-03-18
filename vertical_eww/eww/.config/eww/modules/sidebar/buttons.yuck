@@ -1,0 +1,65 @@
+(defwidget mpd_box []
+  (box :orientation "v" :space-evenly "false" :halign "center" :class "multi-buttons"
+    (mpd-button)
+    (mpd-pause-button)
+    (mpd-skip-button)
+  )
+)
+
+(defwidget mpd-button []
+	(box :class "mpd-button"
+		(eventbox 
+			(label :text "󰎈")
+		)
+	)
+)
+
+(defwidget mpd-pause-button []
+	(box :class "mpd-pause-button"
+		(eventbox
+			:onclick `mpc toggle`
+			:onrightclick `mpc clear`
+			(label :text "󰏤")
+		)
+	)
+)
+
+(defwidget mpd-skip-button [] 
+	(box :class "mpd-skip-button"
+		(eventbox :class "mpd-skip-button"
+			:onclick `mpc next`
+			:onrightclick `mpc prev`
+			:onscroll `if [[ {} == "up" ]]; then mpc seek +3; else mpc seek -3; fi`
+			(label :text "")
+		)
+	)
+)
+
+(defwidget layout-button []
+	(box :class "layout-button"
+		(eventbox :class "layout-button"
+			:onclick `hyprctl switchxkblayout ${keyboard} next; ${EWW_CMD} update layout=$(hyprctl devices | grep '${keyboard}$' -A 3 | grep "active keymap" | cut -f3 -d' ' | cut -c1-2)`
+			(label :text layout)
+		)
+	)
+)
+
+(defwidget volume-button []
+	(box :class "volume-button"
+		(eventbox 
+			:onclick "pamixer -t"
+			:onrightclick "${EWW_CMD} update volume-level=$(pamixer --get-volume); ${EWW_CMD} open volume-slider"
+			:onscroll "if [[ {} == 'up' ]]; then pamixer -i 5; else pamixer -d 5; fi"
+			(label :text volume-icon)
+		)
+	)
+)
+
+(defwidget power-button []
+	(box :class "power-button"
+		(eventbox
+			:onclick "${EWW_CMD} open --toggle power_menu_window"
+			(label :text "⏻")
+		)
+	)
+)

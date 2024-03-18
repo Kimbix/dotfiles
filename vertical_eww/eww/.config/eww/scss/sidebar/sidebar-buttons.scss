@@ -1,0 +1,55 @@
+@mixin sidebar-button {
+	min-height: $barButtonSize;
+	min-width: $barButtonSize;
+	& > widget {
+		border-radius: 100%;
+		background: $accent;
+		transition: all 0.2s ease-in-out;
+		&:hover { background: $accentLight; }
+		&:active { transition: all 0; background: white; }
+		& > label { color: $surface; }
+	}
+}
+
+.multi-buttons {
+  background: $accent;
+  border-radius: 100px;
+}
+
+.mpd-button {
+	@include sidebar-button;
+	margin-top: 5px;
+	& > widget > label { font-size: 21px; }
+}
+
+.mpd-pause-button {
+	@include sidebar-button;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	& > widget > label { font-size: 18px; }
+}
+
+.mpd-skip-button {
+	@include sidebar-button;
+	margin-bottom: 5px;
+	& > widget > label { font-size: 14px; }
+}
+
+.layout-button {
+	@include sidebar-button;
+	margin-top: 5px;
+	& > widget > label { font-size: 15px; }
+}
+
+.volume-button {
+	@include sidebar-button;
+	margin-top: 5px;
+	& > widget > label { font-size: 23px; }
+}
+
+.power-button {
+	@include sidebar-button;
+	margin-top: 5px;
+	& > widget > label { font-size: 17px; }
+}
+

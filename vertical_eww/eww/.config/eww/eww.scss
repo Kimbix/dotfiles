@@ -1,0 +1,15 @@
+
+@import "./scss/variables.scss"
+@import "./scss/bar.scss"
+@import "./scss/information_box.scss"
+@import "./scss/volume_slider.scss"
+
+// Buttons
+@import "./scss/sidebar/sidebar-buttons.scss"
+@import "./scss/sidebar/workspace-button.scss"
+
+* {
+  all: unset;
+  font-family: "JetBrainsMono Nerd Font Propo";
+  font-weight: bold;
+}

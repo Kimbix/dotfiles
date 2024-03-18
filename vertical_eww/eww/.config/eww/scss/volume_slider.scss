@@ -1,0 +1,18 @@
+.volume-slider-box {
+  background : $surface;
+  border-radius: 2em;
+  padding: 10px 10px 10px 10px;
+}
+
+.volume-slider-scale trough {
+  background-color: $surfaceSemiLight;
+  border-radius: 2em;
+  margin: 0px 10px 0px 10px;
+  min-height: 40px;
+  min-width: 250px;
+}
+
+.volume-slider-scale trough highlight {
+  background-color: $accent;
+  border-radius: 2em;
+}

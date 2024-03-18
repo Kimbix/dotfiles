@@ -1,0 +1,19 @@
+(defvar keyboard "razer-razer-huntsman-tournament-edition")
+(defvar layout "En")
+
+(deflisten hyprland-workspaces-literal
+	:initial "(label :text 'a')"
+	`./scripts/hyprland-workspaces.sh`
+)
+
+(deflisten volume-icon
+  :initial "󰖀"
+  ; Long ass command
+  ; Subscribes to pactl events and only outputs the desired sink (remove the #48 for any sink)
+  `pactl subscribe | grep --line-buffered 'sink #48' | while read -r UNUSED_LINE; do MUTE=$(pamixer --get-mute); VOL=$(pamixer --get-volume); if [[ $MUTE == "true" ]]; then echo "󰸈"; else if [[ $VOL -gt 100 ]]; then echo "󱄡"; elif [[ $VOL -gt 60 ]]; then echo "󰕾"; elif [[ $VOL -gt 0 ]]; then echo "󰖀"; else echo "󰝟"; fi; fi; done`
+)
+
+(deflisten volume-level
+  :initial 0
+  `pactl subscribe | grep --line-buffered 'sink #48' | while read -r UNUSED_LINE; do pamixer --get-volume; done`
+)

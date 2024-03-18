@@ -1,0 +1,33 @@
+(defwidget bar []
+  (centerbox :orientation "v" :class "bar"
+		(top_widgets)
+    (center_widgets)
+    (bottom_widgets)
+  )
+)
+
+(defwidget top_widgets []
+  (box :orientation "v" :space-evenly "false"
+       :valign "start" 
+		 (workspaces-widget)
+  )
+)
+
+(defwidget center_widgets []
+  (box :orientation "v" :space-evenly "false"
+       :valign "center" 
+    (date)
+    (time)
+  )
+)
+
+(defwidget bottom_widgets []
+  (box :orientation "v" :space-evenly "false"
+       :halign "center" :valign "end" 
+       ; :css " box layout{ background: red; } "
+    (mpd_box)
+    (layout-button)
+    (volume-button)
+    (power-button)
+  )
+)

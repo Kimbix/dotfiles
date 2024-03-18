@@ -1,0 +1,32 @@
+(defwidget volume_scale []
+  (eventbox :onhoverlost `${EWW_CMD} close volume-slider`
+    (box :orientation "h" :class "volume-slider-box" :space-evenly "false" :valign "center" :halign "center"
+      (highlight_button
+        :onclick "pamixer -t"
+        :content volume-icon
+        :fontsize "30px"
+        :size "40px"
+        :margin "0px"
+        )
+      (scale :value volume-level :min 0 :max 101
+             :onchange `pamixer --set-volume {}`
+             :orientation "h" :class "volume-slider-scale")
+      (highlight_button
+        :onclick "hyprctl dispatch exec pavucontrol"
+        :content "󰹯"
+        :fontsize "30px"
+        :size "40px"
+        :margin "0px"
+      )
+    )
+  )
+)
+
+(defwindow volume-slider
+  :monitor 0
+  :geometry (geometry :x "40%" :y "15%" :width "20%" :height "50px" :anchor "center bottom")
+  :stacking "fg"
+  :exclusive "false"
+  :focusable "false"
+  (volume_scale)
+)

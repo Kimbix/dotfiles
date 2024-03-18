@@ -1,0 +1,3 @@
+(defwidget workspaces-widget []
+	(literal :content hyprland-workspaces-literal)
+)

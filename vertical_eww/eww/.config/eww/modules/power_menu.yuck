@@ -1,0 +1,22 @@
+(defwidget power_menu_widget []
+  (box :class "power-menu-widget"
+    (eventbox :onclick "notify-send 'poweroff'"
+      (label :text "")
+    )
+    (eventbox :onclick "notify-send 'reboot'"
+      (label :text "")
+    )
+    (eventbox :onclick "notify-send 'lock'"
+      (label :text "")
+    )
+  )
+)
+
+(defwindow power_menu_window
+  :monitor 0
+  :geometry (geometry :x "10px" :y "10px" :width "32px" :height "32px" :anchor "bottom left")
+  :stacking "fg"
+  :exclusive "true"
+  :focusable "false"
+  (power_menu_widget)
+)

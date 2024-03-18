@@ -1,0 +1,17 @@
+(defwidget date []
+  (box :orientation "v" :space-evenly "false" :valign "center"
+    :class "information_box"
+    (label :text "󰸗" :css " label { padding-left: 1px; font-size: 22px; }" )
+    (label :text {formattime(EWW_TIME, "%m")})
+    (label :text {formattime(EWW_TIME, "%d")})
+  )
+)
+
+(defwidget time []
+  (box :orientation "v" :space-evenly "false" :valign "center"
+    :class "information_box"
+    (label :text "󰥔" :css " label { padding-left: 1px; font-size: 20px; }" )
+    (label :text {formattime(EWW_TIME, "%I")})
+    (label :text {formattime(EWW_TIME, "%M")})
+  )
+)
