@@ -1,7 +1,11 @@
-# Created by newuser for 5.9
-eval "$(starship init zsh)"
-eval "$(zoxide init zsh)"
+# manface
+alias vim=nvim
 
+# Navigation aliases
+alias ..='z ..'
+# alias --='z -'
+
+# List aliases
 alias ls='ls --color=auto'
 alias la='ls -la --color=auto'
 alias lslink='ls -la --color=auto | grep "../"'
@@ -18,8 +22,6 @@ bindkey "^[[H" beginning-of-line
 bindkey "^[[F" end-of-line
 bindkey "^[[3~" delete-char
 
-# manface
-alias vim=nvim
 
 # bun completions
 [ -s "/home/humberto/.bun/_bun" ] && source "/home/humberto/.bun/_bun"
@@ -27,3 +29,7 @@ alias vim=nvim
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# Created by newuser for 5.9
+eval "$(starship init zsh)"
+eval "$(zoxide init zsh)"
