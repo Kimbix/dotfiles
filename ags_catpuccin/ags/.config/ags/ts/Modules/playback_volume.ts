@@ -1,11 +1,14 @@
 // TODO: When fixed, change this to an import
 const audio = await Service.import("audio");
 
+import { volume_menu } from "ts/Modules/Volume/volume_menu";
+
 export const playback_eventbox = Widget.EventBox({
 	on_scroll_up: () => audio.speaker.volume += 0.01,
 	on_scroll_down: () => audio.speaker.volume -= 0.01,
 	child: Widget.Button({
 		on_clicked: () => audio.speaker.is_muted = !audio.speaker.is_muted,
+		on_secondary_click: () => { audio.emit("stream-added", 0); volume_menu.visible = !volume_menu.visible },
 		on_middle_click: () => Utils.exec("hyprctl dispatch exec pavucontrol"),
 		child: Widget.Box({
 			children: [
@@ -28,3 +31,5 @@ export const playback_eventbox = Widget.EventBox({
 		})
 	})
 });
+
+

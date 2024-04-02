@@ -1,3 +1,4 @@
+import { volume_menu } from "ts/Modules/Volume/volume_menu";
 
 import { date_button } from "ts/Modules/date";
 import { time_button } from "ts/Modules/time";
@@ -21,29 +22,29 @@ import { NotificationPopups } from "ts/Modules/notifications";
 const layout_box = Widget.Box({
 	class_name: "layout_box",
 	spacing: 0,
-	children: [ layout_button ]
+	children: [layout_button]
 });
 
 const datetime_box = Widget.Box({
 	class_name: "datetime_box",
 	spacing: 0,
-	children: [ date_button, time_button ]
+	children: [date_button, time_button]
 });
 
 const usage_box = Widget.Box({
 	class_name: "usage_box",
 	spacing: 0,
-	children: [ cpu_button, ram_button ]
+	children: [cpu_button, ram_button]
 });
 
 const audio_box = Widget.Box({
 	class_name: "audio_box",
-	children: [ playback_eventbox, recording_eventbox ]
+	children: [playback_eventbox, recording_eventbox]
 });
 
 const network_box = Widget.Box({
 	class_name: "network_box",
-	children: [ wlan0_button ]
+	children: [wlan0_button]
 });
 
 // END BOXES
@@ -53,7 +54,7 @@ const left_widgets = Widget.Box({
 	hpack: "start",
 	homogeneous: false,
 	vertical: false,
-	children: [ workspaces_box ]
+	children: [workspaces_box]
 });
 
 
@@ -61,11 +62,11 @@ const right_widgets = Widget.Box({
 	hpack: "end",
 	homogeneous: false,
 	vertical: false,
-	children: [ layout_box, usage_box, network_box, audio_box, datetime_box, systray_box ]
+	children: [layout_box, usage_box, network_box, audio_box, datetime_box, systray_box]
 });
 
 
-const myBar = Widget.Window({
+const bar_window = Widget.Window({
 	name: "bar",
 	monitor: 0,
 	exclusivity: "exclusive",
@@ -85,5 +86,5 @@ Utils.exec(`sassc ${scss} ${css}`);
 App.addIcons(`${App.configDir}/assets`);
 App.config({
 	style: `${css}`,
-	windows: [ NotificationPopups(), myBar ]
+	windows: [NotificationPopups(), bar_window, volume_menu]
 });

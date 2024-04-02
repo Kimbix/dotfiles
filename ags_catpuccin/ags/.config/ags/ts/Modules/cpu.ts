@@ -12,6 +12,6 @@ const cpu_variable = Variable("cpu variable not updated", {
 
 export const cpu_button = Widget.Button({
 	child: Widget.Box({
-		children: [ Widget.Icon({ icon: "cpu-64-bit-symbolic" }), Widget.Label({ label: cpu_variable.bind() }) ]
+		children: [Widget.Icon({ icon: "cpu-64-bit-symbolic" }), Widget.Label({ label: cpu_variable.bind() })]
 	})
 });

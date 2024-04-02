@@ -1,7 +1,7 @@
 * {
-	all: unset;
-	font-family: "Motiva Sans";
-	font-weight: bold;
+  all: unset;
+  font-family: "Motiva Sans";
+  font-weight: bold;
 }
 
 $background: #181825;
@@ -10,141 +10,183 @@ $backgroundVeryLight: #585b70;
 
 $white: #cdd6f4;
 
-$text: #D3E4FE;
+$text: #d3e4fe;
 
 $blue: #89b4fa;
-$blueLight: #A7C7FC;
-$blueDark: #455A7D;
+$blueLight: #a7c7fc;
+$blueDark: #455a7d;
 
 .bar_centerbox {
-	background: $background;
-	padding: 0px 0.5rem;
+  background: $background;
+  padding: 0px 0.5rem;
 }
 
 box + box {
-	margin-left: 0.5rem;
+  margin-left: 0.5rem;
 }
 
 box.layout_box {
-	background: $backgroundLight;
-	border-radius: 1rem;
-	padding: 0px 0.5rem 0px 0.5rem;
+  background: $backgroundLight;
+  border-radius: 1rem;
+  padding: 0px 0.5rem 0px 0.5rem;
 }
 
 box.workspaces_box {
-	background: $backgroundLight;
-	border-radius: 1rem;
-	padding: 0px 0.5rem 0px 0.5rem;
+  background: $backgroundLight;
+  border-radius: 1rem;
+  padding: 0px 0.5rem 0px 0.5rem;
 }
 
 box.audio_box {
-	background: $backgroundLight;
-	border-radius: 1rem;
-	padding: 0px 0.5rem 0px 0.5rem;
+  background: $backgroundLight;
+  border-radius: 1rem;
+  padding: 0px 0.5rem 0px 0.5rem;
 }
 
 box.network_box {
-	background: $backgroundLight;
-	border-radius: 1rem;
-	padding: 0px 0.5rem 0px 0.5rem;
+  background: $backgroundLight;
+  border-radius: 1rem;
+  padding: 0px 0.5rem 0px 0.5rem;
 }
 
 box.datetime_box {
-	background: $backgroundLight;
-	border-radius: 1rem;
-	padding: 0px 0.5rem 0px 0.5rem;
+  background: $backgroundLight;
+  border-radius: 1rem;
+  padding: 0px 0.5rem 0px 0.5rem;
 }
 
 box.usage_box {
-	background: $backgroundLight;
-	border-radius: 1rem;
-	padding: 0px 0.5rem 0px 0.5rem;
+  background: $backgroundLight;
+  border-radius: 1rem;
+  padding: 0px 0.5rem 0px 0.5rem;
 }
 
 box.systray_box {
-	background: $backgroundLight;
-	border-radius: 1rem;
-	padding: 0px 0.5rem 0px 0.5rem;
+  background: $backgroundLight;
+  border-radius: 1rem;
+  padding: 0px 0.5rem 0px 0.5rem;
 }
 
-image + label { margin-left: 0.25rem; }
-widget + widget { & > * { margin-left: 0.25rem; } }
+image + label {
+  margin-left: 0.25rem;
+}
+widget + widget {
+  & > * {
+    margin-left: 0.25rem;
+  }
+}
 // a little explanation, eventboxes count as widgets, so unfortunately for some f*cking reason, we cant add margins to widgets
 // So instead we have to grab the thing that's inside the eventbox, and add the margin to that instead
 // dont ask me why, or why it works, but it does, and i wont question it because its like 4am
 
 label {
-	padding-top: 2px; // This centers the font and I hate it
-	color: $text;
+  padding-top: 2px; // This centers the font and I hate it
+  color: $text;
 }
 
 button {
-	transition: background-color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out;
 
-	border-radius: 1rem;
-	padding: 0px 0.5rem 0px 0.5rem;
+  border-radius: 1rem;
+  padding: 0px 0.5rem 0px 0.5rem;
 
-	background: $backgroundLight;
-	& > box > image { color: $blue; }
-	&:hover { background: $backgroundVeryLight; }
-	&:active { transition: background-color 0.0s; background: $white; }
-	& + button { margin-left: 0.25rem; }
+  background: $backgroundLight;
+  & > box > image {
+    color: $blue;
+  }
+  &:hover {
+    background: $backgroundVeryLight;
+  }
+  &:active {
+    transition: background-color 0s;
+    background: $white;
+  }
+  & + button {
+    margin-left: 0.25rem;
+  }
 }
 
 window.notification-popups box.notifications {
-    padding: .5em;
+  padding: 0.5em;
 }
 
 .icon {
-    min-width: 68px;
-    min-height: 68px;
-    margin-right: 1em;
+  min-width: 68px;
+  min-height: 68px;
+  margin-right: 1em;
 }
 
 .icon image {
-    font-size: 58px;
-    /* to center the icon */
-    margin: 5px;
-    color: $white;
+  font-size: 58px;
+  /* to center the icon */
+  margin: 5px;
+  color: $white;
 }
 
 .icon box {
-    min-width: 68px;
-    min-height: 68px;
-    border-radius: 7px;
+  min-width: 68px;
+  min-height: 68px;
+  border-radius: 7px;
 }
 
 .notification {
-    min-width: 350px;
-    border-radius: 11px;
-    padding: 1em;
-    margin: .5em;
-    border: 2px solid $blue;
-    background-color: $background;
+  min-width: 350px;
+  border-radius: 11px;
+  padding: 1em;
+  margin: 0.5em;
+  border: 2px solid $blue;
+  background-color: $background;
 }
 
 .notification.critical {
-    border: 1px solid lightcoral;
+  border: 1px solid lightcoral;
 }
 
 .title {
-    color: $blue;
-    font-size: 1.5em;
+  color: $blue;
+  font-size: 1.5em;
 }
 
 .body {
-    color: $white;
+  color: $white;
 }
 
 .actions .action-button {
-    margin: 0 .4em;
-    margin-top: .8em;
+  margin: 0 0.4em;
+  margin-top: 0.8em;
 }
 
 .actions .action-button:first-child {
-    margin-left: 0;
+  margin-left: 0;
 }
 
 .actions .action-button:last-child {
-    margin-right: 0;
+  margin-right: 0;
+}
+
+
+scale trough {
+	min-height: 0.7em;
+	border-radius: 0.5em;
+	background: $backgroundLight;
+}
+
+scale highlight {
+	border-radius: 0.5em;
+	padding: 0px 0px 0px 1em;
+	background: $blue;
+}
+scale slider { all: unset; }
+
+.volume-menu {
+	min-width: 20em;
+	background: $background;
+	padding: 1em;
+	margin-right: 1em;
+	border-radius: 1em 1em 0px 0px;
+}
+
+.volume_menu_title {
+	font-size: 1.5em;
+	color: $blue;
 }

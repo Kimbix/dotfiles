@@ -89,7 +89,7 @@ export function NotificationPopups(monitor = 0) {
 		children: notifications.popups.map(Notification),
 	});
 
-	function onNotified(_: any, id: number) {
+	function onNotified(_, id: number) {
 		const n = notifications.getNotification(id);
 		if (n) {
 			list.children = [Notification(n), ...list.children];
