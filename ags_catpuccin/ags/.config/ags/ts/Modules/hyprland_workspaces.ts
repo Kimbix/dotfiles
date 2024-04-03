@@ -13,9 +13,9 @@ export const workspaces_box = Widget.EventBox({
 		})),
 
 		setup: self => self.hook(hyprland, () => self.children.forEach(btn => {
-			btn.label = "";
-			if (hyprland.active.workspace.id == btn.attribute) { btn.label = ""; }
-			else if (hyprland.workspaces.some(ws => ws.id == btn.attribute)) { btn.label = ""; }
+			btn.label = "";
+			if (hyprland.active.workspace.id == btn.attribute) { btn.label = ""; }
+			else if (hyprland.workspaces.some(ws => ws.id == btn.attribute)) { btn.label = ""; }
 		})),
 	}),
 });

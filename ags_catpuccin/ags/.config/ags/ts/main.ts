@@ -2,8 +2,6 @@ import { volume_menu } from "ts/Modules/Volume/volume_menu";
 
 import { date_button } from "ts/Modules/date";
 import { time_button } from "ts/Modules/time";
-import { cpu_button } from "ts/Modules/cpu";
-import { ram_button } from "ts/Modules/ram";
 import { wlan0_button } from "ts/Modules/network";
 import { layout_button } from "ts/Modules/hyprland_keyboard";
 
@@ -14,8 +12,6 @@ import { workspaces_box } from "ts/Modules/hyprland_workspaces";
 import { systray_box } from "ts/Modules/systray";
 
 import { NotificationPopups } from "ts/Modules/notifications";
-
-
 
 // BOXES
 
@@ -31,11 +27,6 @@ const datetime_box = Widget.Box({
 	children: [date_button, time_button]
 });
 
-const usage_box = Widget.Box({
-	class_name: "usage_box",
-	spacing: 0,
-	children: [cpu_button, ram_button]
-});
 
 const audio_box = Widget.Box({
 	class_name: "audio_box",
@@ -57,12 +48,13 @@ const left_widgets = Widget.Box({
 	children: [workspaces_box]
 });
 
+import { monitor_box } from "ts/Modules/SystemMonitor/monitor_box" ;
 
 const right_widgets = Widget.Box({
 	hpack: "end",
 	homogeneous: false,
 	vertical: false,
-	children: [layout_box, usage_box, network_box, audio_box, datetime_box, systray_box]
+	children: [layout_box, monitor_box, network_box, audio_box, datetime_box, systray_box]
 });
 
 

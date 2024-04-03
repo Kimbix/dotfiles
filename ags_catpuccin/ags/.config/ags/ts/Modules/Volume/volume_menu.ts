@@ -2,9 +2,8 @@ import { Orientation } from "types/@girs/gtk-3.0/gtk-3.0.cjs";
 import { Stream } from "types/service/audio";
 
 const audio = await Service.import("audio");
-
-
-const playback_source = (str: Stream) =>
+ 
+const playback_source = (str : Stream) =>
 	Widget.Box({
 		attribute: str.id,
 		vertical: true,
@@ -61,6 +60,7 @@ export const volume_menu = Widget.Window({
 	exclusivity: "normal",
 	layer: "top",
 	monitor: 0,
+	visible: false,
 	child: Widget.Box({
 		orientation: Orientation.VERTICAL,
 		class_name: "volume-menu",
@@ -69,6 +69,5 @@ export const volume_menu = Widget.Window({
 			audio_sources_list
 		]
 	}),
-	visible: true,
 });
 

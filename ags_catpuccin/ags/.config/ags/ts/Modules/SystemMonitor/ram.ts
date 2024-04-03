@@ -7,7 +7,7 @@ const ram_variable = Variable("ram variable not updated", {
 			.find(line => line.includes("Mem:"))
 			?.split(/\s+/)
 			.splice(1, 2)
-			.map((str : string) => Number(str))
+			.map((str: string) => Number(str))
 			?? [1, 0]))
 		.toString()
 		.concat("%")
@@ -16,6 +16,6 @@ const ram_variable = Variable("ram variable not updated", {
 
 export const ram_button = Widget.Button({
 	child: Widget.Box({
-		children: [ Widget.Icon({ icon: "memory-symbolic" }), Widget.Label({ label: ram_variable.bind() })]
+		children: [Widget.Icon({ icon: "memory-symbolic" }), Widget.Label({ label: ram_variable.bind() })]
 	})
 });
